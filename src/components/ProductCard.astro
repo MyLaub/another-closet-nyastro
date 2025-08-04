@@ -6,7 +6,7 @@ const id = parseInt(new URL(Astro.request.url).searchParams.get("id") || "");
 
 <div class="product_card">
   <!-- <a href={`/product/${data.id}`}> -->
-  <a href={`/single-view?id=${data.id}`}>
+  <a href=`single/${data.id}`>
     <article class="product_view">
       <img src={`/images/${data.image}`} alt={data.name} class="item-image" />
       <div class="product_info">
