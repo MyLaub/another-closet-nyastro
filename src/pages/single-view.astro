@@ -1,0 +1,91 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../css/global.css";
+
+// 1. Hent id fra URL'en som query parameter
+const id = new URL(Astro.request.url).searchParams.get("id");
+
+// 2. Lav variabel til produkt
+let product = null;
+
+// 3. Hvis der findes et ID, hent produktet fra Supabase
+if (id) {
+  const res = await fetch(`https://qggjjsozgtvkomdpueyz.supabase.co/rest/v1/AC_Products?id=eq.${id}`, {
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFnZ2pqc296Z3R2a29tZHB1ZXl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM3ODY2MDUsImV4cCI6MjA2OTM2MjYwNX0.RsjMI2QZxG6bGmtcxiqUPia_lUJC7ZhaTqofLyeE9Fs",
+      Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFnZ2pqc296Z3R2a29tZHB1ZXl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM3ODY2MDUsImV4cCI6MjA2OTM2MjYwNX0.RsjMI2QZxG6bGmtcxiqUPia_lUJC7ZhaTqofLyeE9Fs",
+      Accept: "application/json",
+    },
+  });
+
+  const data = await res.json();
+  product = data[0]; // Supabase returnerer et array
+}
+---
+
+<Layout>
+  {
+    product ? (
+      <section class="singleview">
+        <div class="single-image">
+          <img src={`/images/${product.image}`} alt={product.name} />
+        </div>
+
+        <div class="product-details">
+          <h1>{product.name}</h1>
+          <p>
+            <strong>Mærke:</strong> {product.brand}
+          </p>
+          <p>
+            <strong>Størrelse:</strong> {product.size}
+          </p>
+          <p>
+            <strong>Fit:</strong> {product.fit}
+          </p>
+          <p>
+            <strong>Vask:</strong> {product.wash}
+          </p>
+          <p>
+            <strong>Stand:</strong> {product.condition}
+          </p>
+          <p>
+            <strong>Kommentar:</strong> {product.comment}
+          </p>
+        </div>
+      </section>
+    ) : (
+      <p style="text-align: center; padding: 2rem;">Produkt ikke fundet 😕</p>
+    )
+  }
+</Layout>
+
+<style>
+  .singleview {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 2rem auto;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .single-image {
+    flex: 1 1 40%;
+  }
+
+  .single-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .product-details {
+    flex: 1 1 50%;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .product-details h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+</style>

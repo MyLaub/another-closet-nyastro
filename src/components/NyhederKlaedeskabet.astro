@@ -1,0 +1,58 @@
+---
+import ProductCard from "./ProductCard.astro";
+
+const data = await fetch("https://qggjjsozgtvkomdpueyz.supabase.co/rest/v1/AC_Products?select=*&order=id.desc&limit=4", {
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFnZ2pqc296Z3R2a29tZHB1ZXl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM3ODY2MDUsImV4cCI6MjA2OTM2MjYwNX0.RsjMI2QZxG6bGmtcxiqUPia_lUJC7ZhaTqofLyeE9Fs",
+  },
+}).then((res) => res.json());
+---
+
+<section class="nyheder">
+  <h1 class="nyheder-title">Nyheder i klædeskabet</h1>
+  <div class="nyheder-grid">
+    {data.map((product) => <ProductCard data={product} />)}
+  </div>
+</section>
+
+<style>
+  .nyheder {
+    padding: 3rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .nyheder-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* Mobil layout */
+
+  @media (max-width: 768px) {
+    .nyheder {
+      /* padding: 2rem 2rem; */
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      padding: 0rem 2rem;
+    }
+
+    .nyheder-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+
+    .nyheder-grid {
+      gap: 1rem;
+    }
+  }
+</style>

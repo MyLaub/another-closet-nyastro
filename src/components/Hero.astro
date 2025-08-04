@@ -1,0 +1,85 @@
+<section class="hero">
+  <div class="hero-image">
+    <img src="/images/Hero-dummy.webp" alt="Kvinde i blåt outfit og sølvsko" />
+  </div>
+  <div class="hero-text">
+    <h1>Dele-tøj på abonnement</h1>
+    <p>Hos Another Closet har vi skabt et socialt og bæredygtigt klædeskab, hvor du for 149,-/mdr. kan låne 3 unikke stykker tøj.</p>
+    <a href="#find-klaedeskab" class="cta">Find dit lokale klædeskab her</a>
+  </div>
+</section>
+
+<style>
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* min-height: 40vh; */
+  }
+
+  .hero-image {
+    width: 100%;
+    aspect-ratio: 4 / 3; /* Justér forholdet hvis du ønsker lavere højde fx 3 / 2 */
+    overflow: hidden;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero-text {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centrerer vertikalt */
+    align-items: flex-end; /* højrejusterer indholdet horisontalt */
+    text-align: right;
+  }
+
+  .hero-text h1 {
+    font-weight: normal;
+    margin-bottom: 2rem;
+  }
+
+  .hero-text p {
+    margin-bottom: 2rem;
+  }
+
+  .hero-text .cta {
+    font-family: "futura-pt", Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+    transition: text-decoration 0.2s ease;
+  }
+
+  .hero-text .cta:hover {
+    text-decoration: underline;
+  }
+
+  /* Mobil layout */
+  @media (max-width: 768px) {
+    .hero {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-text {
+      align-items: flex-start;
+      text-align: left;
+      padding: 2rem 2rem;
+    }
+
+    .hero-text h1 {
+      font-size: 2.25rem;
+      text-align: left;
+    }
+
+    .hero-text p {
+    }
+
+    .hero-text .cta {
+    }
+  }
+</style>

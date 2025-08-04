@@ -1,0 +1,108 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../css/global.css";
+import ProductviewHero from "../components/Productview-hero.astro";
+import ProductCard from "../components/ProductCard.astro";
+import NyhedsbrevRoed from "../components/Nyhedsbrev-roed.astro";
+
+const data = await fetch(
+  "https://qggjjsozgtvkomdpueyz.supabase.co/rest/v1/AC_Products?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFnZ2pqc296Z3R2a29tZHB1ZXl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM3ODY2MDUsImV4cCI6MjA2OTM2MjYwNX0.RsjMI2QZxG6bGmtcxiqUPia_lUJC7ZhaTqofLyeE9Fs",
+  {
+    method: "GET",
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFnZ2pqc296Z3R2a29tZHB1ZXl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM3ODY2MDUsImV4cCI6MjA2OTM2MjYwNX0.RsjMI2QZxG6bGmtcxiqUPia_lUJC7ZhaTqofLyeE9Fs",
+    },
+  }
+).then((res) => res.json());
+---
+
+<Layout>
+  <ProductviewHero />
+
+  <section>
+    <div class="filters">
+      <select id="type-filter" class="custom-select">
+        <option value="">Sortér efter type...</option>
+        <option value="kjole">Kjole</option>
+        <option value="jakke">Jakke</option>
+        <option value="nederdel">Nederdel</option>
+      </select>
+
+      <select id="size-filter" class="custom-select">
+        <option value="">Sortér efter størrelse...</option>
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+    </div>
+  </section>
+
+  <section class="grid">
+    {data.map((product) => <ProductCard data={product} />)}
+  </section>
+  <NyhedsbrevRoed />
+</Layout>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    /* max-width: 1200px; */
+    margin: 40px auto;
+    padding: 1rem;
+    text-decoration: none;
+  }
+
+  .filters {
+    display: flex;
+    gap: 1rem;
+    justify-content: left;
+    padding: 1rem;
+    background: var(--rød);
+  }
+
+  select {
+    padding: 0.5rem 1rem;
+  }
+
+  .custom-select {
+    background-color: transparent;
+    color: white;
+    font-family: "futura-pt", sans-serif;
+    font-size: 1rem;
+    font-style: italic;
+    /* padding: 0.7rem 1.5rem; */
+    padding: 0.7rem 2rem 0.7rem 1.5rem;
+    border: 1.5px solid white;
+    border-radius: 999px;
+    cursor: pointer;
+    min-width: 300px;
+  }
+
+  /* Mobil layout */
+
+  @media (max-width: 768px) {
+    .filters {
+      /* flex-direction: column; */
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .custom-select {
+      width: 100%;
+      max-width: 90%;
+      min-width: unset;
+      text-align: center;
+    }
+
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 1rem 0.5rem;
+      gap: 1rem;
+      margin: 0px auto;
+    }
+  }
+</style>

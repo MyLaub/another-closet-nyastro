@@ -1,0 +1,59 @@
+---
+const { data } = Astro.props;
+// const id = new URL(Astro.request.url).searchParams.get("id");
+const id = parseInt(new URL(Astro.request.url).searchParams.get("id") || "");
+---
+
+<div class="product_card">
+  <!-- <a href={`/product/${data.id}`}> -->
+  <a href={`/single-view?id=${data.id}`}>
+    <article class="product_view">
+      <img src={`/images/${data.image}`} alt={data.name} class="item-image" />
+      <div class="product_info">
+        <h2>{data.name}</h2>
+        <h3>{data.brand}</h3>
+        <p>Størrelse: {data.size}</p>
+      </div>
+    </article>
+  </a>
+</div>
+
+<style>
+  a {
+    text-decoration: none;
+  }
+
+  .product_view {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+  }
+
+  h2 {
+    font-family: "the-seasons";
+    font-size: 1.5rem;
+    padding-bottom: 0.6rem;
+  }
+  h3 {
+    font-family: "futura-pt";
+    font-size: 1.25rem;
+    font-weight: 400;
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
+
+  article > img {
+    width: 100%;
+    margin: 0;
+  }
+
+  .product_info {
+    margin-top: 1rem;
+    text-align: center;
+  }
+</style>

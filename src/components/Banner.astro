@@ -1,0 +1,40 @@
+<section>
+  <div class="banner">
+    <p class="banner-text">
+      Tilmeld dig vores nyhedsbrev og få første måned gratis! Gælder indtil d. 1/9 2025 &nbsp; • &nbsp; Tilmeld dig vores nyhedsbrev og få første måned gratis! Gælder indtil d. 1/9 2025 &nbsp; • &nbsp; Tilmeld dig vores nyhedsbrev og få første måned
+      gratis! Gælder indtil d. 1/9 2025
+    </p>
+  </div>
+</section>
+
+<style>
+  section {
+    background-color: var(--blå);
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: "futura-pt", sans-serif;
+    font-style: italic;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 0.8rem 0;
+  }
+
+  .banner {
+    display: flex;
+    width: fit-content;
+    animation: scroll-left 30s linear infinite;
+  }
+
+  .banner-text {
+    flex-shrink: 0;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>

@@ -1,0 +1,132 @@
+<section class="container">
+  <!-- <p class="breadcrumb">Forside / Tøjfællesskabet i københavn</p> -->
+
+  <p class="breadcrumb">
+    <a href="/" class="breadcrumb-link">Forside</a> / Tøjfællesskabet i københavn
+  </p>
+
+  <div class="grid">
+    <div class="image">
+      <img src="/images/Hero-dummy.webp" alt="Kvinde i blå bukser og sandaler" />
+    </div>
+
+    <div class="info-boks">
+      <h1 class="by">København</h1>
+      <p class="intro">Vi glæder os til at se dig til vores tøjsalon, hvor der vil være driks, snacks og god musik!</p>
+
+      <div class="datoer">
+        <p>Torsdag d. 10/8 kl. 17-20.30</p>
+        <p>Torsdag d. 10/9 kl. 17-19</p>
+      </div>
+
+      <p class="adresse">Guldbergsgade 29D, via Res Res</p>
+
+      <p class="note">
+        <em>Psst. Der er åben for selvbetjening for alle medlemmer i vores showroom alle hverdage mellem kl. 11–18.</em>
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .container {
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    font-family: "futura-pt", sans-serif;
+    color: black;
+  }
+
+  .breadcrumb {
+    font-style: italic;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .breadcrumb-link {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s ease;
+  }
+
+  .breadcrumb a:hover {
+    opacity: 0.7;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .info-boks {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .by {
+    font-family: "the-seasons", serif;
+    font-size: 3rem;
+    font-weight: normal;
+    margin: 0;
+  }
+
+  .datoer p {
+    margin: 0.5rem 0;
+  }
+
+  .note {
+    font-style: italic;
+    font-size: 1rem;
+  }
+
+  /* Mobil layout */
+
+  @media (max-width: 768px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      padding-bottom: 2rem;
+      padding-top: 0rem;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .image img {
+      width: 100%;
+      height: auto;
+    }
+
+    .info-boks {
+      gap: 1rem;
+    }
+
+    .by {
+      font-size: 2.25rem;
+    }
+
+    .breadcrumb {
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .datoer p {
+      margin: 0.4rem 0;
+    }
+
+    .note {
+      font-size: 0.95rem;
+    }
+  }
+</style>

@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* main {
+  max-width: 1200px;
+  margin: 0 auto;
+} */
+
+html {
+  scroll-behavior: smooth;
+  --pudder: #eecbb8;
+  --blå: #c1d5df;
+  --rød: #862d29;
+  --brun: #371b05;
+  --hvid: #ffffff;
+  --sort: #000000;
+}
+
+/* Fonter */
+
+@font-face {
+  font-family: "CCMetcon Heavy";
+  src: url("/fonts/CCMetcon-Heavy.woff2") format("woff2"), url("/fonts/CCMetcon-Heavy.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url("https://use.typekit.net/mwq0ovq.css");
+
+h1 {
+  font-family: "the-seasons", serif;
+  font-style: normal;
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-family: "futura-pt", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+p {
+  font-family: "futura-pt", Arial, Helvetica, sans-serif;
+  /* font-style: normal; */
+  font-size: 1.25rem;
+  line-height: 1.6;
+  /* font-weight: light; */
+}
+
+/* Headers */
+
+/* produktvisning css */
+
+.productgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 1px;
+  margin-bottom: -10px;
+}
+
+.product_card {
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+article > img {
+  width: 100%;
+  margin: 0;
+}
+
+.product_info {
+  margin-top: 1rem;
+  text-align: center;
+}

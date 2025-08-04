@@ -1,0 +1,119 @@
+<section class="faq-sektion">
+  <div class="faq-indhold">
+    <ul class="faq-spoergsmaal">
+      <li>“ Er der tøj i alle størrelser? ”</li>
+      <li>“ Kan jeg frit vælge, hvad jeg vil låne? ”</li>
+      <li>“ Får jeg mit eget udlånte tøj tilbage igen? ”</li>
+      <li>“ Hvad hvis tøjet går i stykker? ”</li>
+      <li>“ Hvad med vask? ”</li>
+    </ul>
+    <a href="#faq" class="faq-knap">Klik her og bliv klogere!</a>
+  </div>
+
+  <div class="faq-tekst">
+    <h2 class="faq-logo">FAQ</h2>
+  </div>
+</section>
+
+<style>
+  .faq-sektion {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    background-color: var(--brun);
+    color: white;
+    /* padding: 4rem 2rem 0 2rem; */
+    padding: 4rem 2rem 2rem 2rem;
+    align-items: stretch; /* <– ændret */
+  }
+
+  .faq-indhold {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .faq-spoergsmaal {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: "futura-pt";
+    font-size: 1.25rem;
+    font-style: italic;
+  }
+
+  .faq-spoergsmaal li {
+    margin-bottom: 0.5rem;
+  }
+
+  .faq-knap {
+    display: inline-block;
+    border: 1.5px solid white;
+    padding: 0.75rem 1.5rem;
+    font-family: "futura-pt";
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: white;
+    border-radius: 999px;
+    transition: background-color 0.2s ease;
+    width: fit-content;
+
+    margin-bottom: 3rem;
+  }
+
+  .faq-knap:hover {
+    background-color: white;
+    color: var(--brun);
+  }
+
+  .faq-tekst {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+    align-self: stretch;
+    padding-bottom: 0;
+  }
+
+  .faq-logo {
+    font-family: "CCMetcon Heavy", sans-serif;
+    font-size: 8rem;
+    margin: 0;
+    color: white;
+    margin-bottom: -3.8rem;
+  }
+
+  /* Mobil layout */
+
+  @media (max-width: 768px) {
+    .faq-sektion {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 2rem;
+    }
+
+    .faq-indhold {
+      order: 1;
+      align-items: flex-start;
+      text-align: left;
+      gap: 1rem;
+    }
+
+    .faq-knap {
+      align-self: left;
+      margin-top: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .faq-tekst {
+      order: 2;
+      display: flex;
+      justify-content: flex-end;
+      padding: 0;
+    }
+
+    .faq-logo {
+      font-size: 5rem;
+      margin-bottom: -3.2rem;
+    }
+  }
+</style>

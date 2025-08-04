@@ -1,0 +1,99 @@
+<section class="ambassador-section">
+  <div class="ambassador-text">
+    <h2>Bliv ambassadør for</h2>
+    <h1 class="logo">ANOTHER CLOSET</h1>
+    <p>Post 2 billeder på instagram og lej et ekstra stykke tøj hver måned gratis</p>
+    <a href="#tilmelding" class="ambassador-knap">Tilmeld dig her!</a>
+  </div>
+
+  <div class="ambassador-image">
+    <img src="/images/Hero-dummy.webp" alt="Kvinde i outfit på trappe" />
+  </div>
+</section>
+
+<style>
+  .ambassador-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--rød);
+    color: white;
+    padding: 4rem 2rem;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .ambassador-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-family: "futura-pt", sans-serif;
+  }
+
+  .logo {
+    font-family: "CCMetcon Heavy", sans-serif;
+    font-size: 3rem;
+    color: white;
+  }
+
+  .ambassador-knap {
+    display: inline-block;
+    border: 1.5px solid white;
+    padding: 0.75rem 1.5rem;
+    font-family: "futura-pt";
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: white;
+    border-radius: 999px;
+    transition: background-color 0.2s ease;
+    width: fit-content;
+  }
+
+  .ambassador-knap:hover {
+    background-color: white;
+    color: var(--rød);
+  }
+
+  .ambassador-image img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    max-height: 400px;
+  }
+
+  /* Mobil layout */
+
+  @media (max-width: 768px) {
+    .ambassador-section {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 0;
+      /* gap: 2rem; */
+    }
+
+    .ambassador-text {
+      text-align: left;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .logo {
+      font-size: 2.5rem;
+    }
+
+    .ambassador-image {
+      padding: 0 2rem;
+    }
+
+    .ambassador-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+    .ambassador-knap {
+      /* margin: 2rem auto 0 auto; */
+      display: block;
+    }
+  }
+</style>

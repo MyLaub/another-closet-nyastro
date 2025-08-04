@@ -1,0 +1,93 @@
+<section class="how-it-works">
+  <div class="step step-1">
+    <h2 class="nummer">1</h2>
+    <p>Tilmeld dig for 149,-/mdr. og bliv en del af dit lokale tøjfællesskab.</p>
+  </div>
+  <div class="step step-2">
+    <h2 class="nummer">2</h2>
+    <p>Deltag i vores månedlige tøjbyttesalon. Medbring 3 stykker tøj og vælg 3 nye med hjem.</p>
+  </div>
+  <div class="step step-3">
+    <h2 class="nummer">3</h2>
+    <p>En måned senere returnerer du tøjet og bytter til 3 nye stykker.</p>
+  </div>
+</section>
+
+<style>
+  .how-it-works {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+  }
+
+  .step {
+    padding: 3rem 2rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nummer {
+    font-family: "CCMetcon Heavy", sans-serif;
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+
+  .step p {
+    max-width: 50%;
+  }
+
+  .step-1 {
+    background-color: var(--rød);
+  }
+
+  .step-2 {
+    background-color: #c0a293;
+  }
+
+  .step-3 {
+    background-color: var(--brun);
+  }
+
+  /* @media (max-width: 768px) {
+    .how-it-works {
+      grid-template-columns: 1fr;
+    }
+
+    .step {
+      padding: 2rem 2rem;
+    }
+
+    .step p {
+      max-width: 100%;
+    } */
+
+  @media (max-width: 768px) {
+    .how-it-works {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .step {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .nummer {
+      font-size: 4rem;
+      margin: 0;
+    }
+
+    .step p {
+      max-width: 100%;
+      font-size: 1rem;
+    }
+  }
+</style>

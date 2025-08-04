@@ -1,0 +1,110 @@
+<section id="find-klaedeskab" class="lokalomraade-sektion">
+  <div class="byer">
+    <ul class="by-liste">
+      <li><a href="/product-view">Nørrebro</a></li>
+      <li><a href="/product-view">Aau København</a></li>
+      <li><a href="/product-view">Lyngby</a></li>
+      <li><a href="/product-view">Roskilde</a></li>
+      <li><a href="/product-view">Ringkøbing</a></li>
+      <li><a href="/product-view">Fredericia</a></li>
+      <li><a href="/product-view">Ribe</a></li>
+    </ul>
+  </div>
+
+  <div class="tekst-indhold">
+    <p>Vi har fart på og åbner konstant nye tøjfællesskaber, så endnu flere kvinder kan dele tøj i stedet for at købe nyt.</p>
+    <p>Skriv dig på ventelisten, og vær den første til at få besked, når vi åbner i nærheden af dig, eller hør hvordan, du starter dit eget tøjfællesskab.</p>
+    <a href="#venteliste" class="knap">Start dit eget tøjfællesskab!</a>
+  </div>
+</section>
+
+<style>
+  .lokalomraade-sektion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: black;
+    /* max-width: 1200px;
+    margin: 0 auto; */
+  }
+
+  .byer {
+    background-color: white;
+    padding: 4rem 2rem;
+  }
+
+  .by-liste {
+    list-style: none;
+    font-family: "the-seasons", serif;
+    font-style: normal;
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+
+  .by-liste li {
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: text-decoration 0.2s ease;
+  }
+
+  .by-liste a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .by-liste li a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 4px;
+  }
+
+  .tekst-indhold {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--blå);
+    gap: 2rem;
+  }
+
+  .knap {
+    display: inline-block;
+    border: 1.5px solid black;
+    padding: 0.75rem 1.5rem;
+    font-family: "futura-pt";
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: black;
+    border-radius: 999px;
+    transition: background-color 0.2s ease;
+    width: fit-content;
+  }
+
+  .knap:hover {
+    background-color: var(--sort);
+    color: var(--hvid);
+  }
+
+  @media (max-width: 768px) {
+    .lokalomraade-sektion {
+      display: block;
+    }
+
+    .byer {
+      padding: 2rem 0;
+    }
+
+    .by-liste {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .tekst-indhold {
+      padding: 2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* align-items: center; */
+      background-color: var(--blå);
+    }
+  }
+</style>

@@ -1,0 +1,76 @@
+<section class="nyhedsbrev-sektion">
+  <h1 class="nyhedsbrev-overskrift">Tilmeld dig vores nyhedsbrev og få første måned gratis!</h1>
+
+  <form class="nyhedsbrev-formular">
+    <input type="email" class="nyhedsbrev-input" placeholder="Skriv din mail her..." />
+    <button type="submit" class="nyhedsbrev-knap" aria-label="Tilmeld"> ➔ </button>
+  </form>
+</section>
+
+<style>
+  .nyhedsbrev-sektion {
+    background-color: white;
+    padding: 6rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .nyhedsbrev-overskrift {
+    font-family: "the-seasons", serif;
+    font-weight: normal;
+    max-width: 18ch;
+  }
+
+  .nyhedsbrev-formular {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 999px;
+    overflow: hidden;
+    max-width: 700px;
+    width: 100%;
+  }
+
+  .nyhedsbrev-input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    font-family: "futura-pt", sans-serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    border: none;
+    outline: none;
+  }
+
+  .nyhedsbrev-knap {
+    background-color: black;
+    color: white;
+    font-size: 2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .nyhedsbrev-knap:hover {
+    background-color: #333;
+  }
+
+  /* Mobil layout */
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.25rem;
+    }
+    .nyhedsbrev-sektion {
+      padding: 2rem 2rem;
+    }
+  }
+</style>

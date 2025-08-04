@@ -1,0 +1,144 @@
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <h1>another closet</h1>
+    </div>
+
+    <div class="footer-columns">
+      <div class="footer-section">
+        <h2>Kontakt:</h2>
+        <p>hej@anothercloset.dk</p>
+        <p>Tønsbergvej 104 – 4000</p>
+        <p>Roskilde</p>
+        <p>CVR nr.: 44995875</p>
+      </div>
+
+      <div class="footer-section">
+        <h2>Mere info:</h2>
+        <p><a href="/saadan-fungerer">Sådan fungerer Another Closet</a></p>
+        <p><a href="/vores-mission">Vores mission</a></p>
+        <p><a href="/faq">Faq</a></p>
+      </div>
+
+      <div class="footer-section">
+        <h2>Det med småt:</h2>
+        <p><a href="/handelsbetingelser">Handelsbetingelser</a></p>
+        <p><a href="/cookies-og-privatliv">Cookies- og privatlivspolitik</a></p>
+      </div>
+
+      <div class="footer-social">
+        <a href="https://www.instagram.com/anothercloset.dk/?hl=da" aria-label="Instagram" target="_blank" rel="noopener">
+          <img src="/images/instagram-logo.svg" alt="Instagram" />
+        </a>
+        <a href="https://www.facebook.com/anotherclosetdanmark/" aria-label="Facebook" target="_blank" rel="noopener">
+          <img src="/images/facebook-logo-kopi.svg" alt="Facebook" />
+        </a>
+        <a href="https://www.tiktok.com/@anothercloset.dk?_t=ZN-8ySm61wZNeY&_r=1" aria-label="TikTok" target="_blank" rel="noopener">
+          <img src="/images/tiktok-logo.svg" alt="TikTok" />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--blå);
+    padding: 2rem 2rem;
+    font-family: "futura-pt", sans-serif;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footer-logo h1 {
+    font-family: "CCMetcon Heavy", sans-serif;
+    font-size: 2rem;
+    margin: 0;
+    padding-bottom: 1rem;
+  }
+
+  .footer-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+
+  .footer-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-section p,
+  .footer-section a {
+    margin: 0.3rem 0;
+    color: black;
+    font-style: italic;
+    font-weight: 50;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .footer-section a:hover {
+    opacity: 0.7;
+  }
+
+  .footer-social {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .footer-social img {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Mobil layout */
+
+  @media (max-width: 768px) {
+    .footer {
+      padding: 2rem 1.5rem;
+    }
+
+    .footer-container {
+      gap: 1.5rem;
+    }
+
+    .footer-logo h1 {
+      font-size: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footer-section h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .footer-section p,
+    .footer-section a {
+      font-size: 0.9rem;
+      margin: 0.2rem 0;
+    }
+
+    .footer-columns {
+      gap: 1rem;
+    }
+
+    .footer-social {
+      justify-content: center;
+      margin-top: 1rem;
+      gap: 0.8rem;
+    }
+
+    .footer-social img {
+      width: 28px;
+      height: 28px;
+    }
+  }
+</style>
