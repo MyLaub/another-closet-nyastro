@@ -102,24 +102,26 @@
   }
 
   .dropdown-menu {
-    display: none;
-    position: absolute; /* Ændret fra fixed */
-    /* top: 100%;
-    left: 0;
-    width: 100vw; */
-    /* background: rgba(255, 255, 255, 0.8); */
-    background-color: aqua;
-    padding: 1rem 0;
-    justify-content: space-evenly;
-    z-index: 999;
-  }
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  margin-left: -2rem; 
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  padding: 2rem 2rem;
+  justify-content: left;
+  gap: 3rem;
+  z-index: 999;
+}
 
-  /* Denne selector sørger for at dropdown-menuen kun vises, når linket 'Find nærmeste klædeskab' er hovered */
+
   .dropdown:hover .dropdown-menu {
     display: flex;
   }
 
-  /* Links i dropdown */
+
   .dropdown-menu a {
     color: black;
     font-size: 1.2rem;
@@ -131,30 +133,8 @@
     text-decoration: underline;
   }
 
-  /* .dropdown {
-    position: relative;
-  }
 
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    white-space: nowrap;
-    z-index: 10;
-  }
 
-  .dropdown:hover > .nav-link + .dropdown-menu {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-
-  /* Undermenu links */
   .dropdown-menu a {
     color: black;
     font-size: 1.2rem;
@@ -165,19 +145,18 @@
   .dropdown-menu a:hover {
     text-decoration: underline;
   }
-  */
+  
 
 
 
   /* Mobil header style */
 
-/* DESKTOP DEFAULT: skjul mobil-elementer */
 .hamburger,
 .mobile-menu {
   display: none;
 }
 
-/* Media query: mobilvisning */
+/* Mobil layout */
 @media (min-width:768px){
   .mobile-menu{
     display: none;
@@ -303,4 +282,6 @@
   toggleDropdown?.addEventListener("click", () => {
     submenu?.classList.toggle("active");
   });
+
+  
 </script>
