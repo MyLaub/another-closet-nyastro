@@ -5,7 +5,6 @@ const id = parseInt(new URL(Astro.request.url).searchParams.get("id") || "");
 ---
 
 <div class="product_card">
-  <!-- <a href={`/product/${data.id}`}> -->
   <a href=`single/${data.id}`>
     <article class="product_view">
       <img src={`/images/${data.image}`} alt={data.name} class="item-image" />
@@ -30,6 +29,21 @@ const id = parseInt(new URL(Astro.request.url).searchParams.get("id") || "");
     align-items: center;
     text-decoration: none;
     color: black;
+    transition: transform 0.3s ease;
+  }
+
+  .product_view:hover {
+    transform: scale(1.05);
+  }
+
+  .product_view img,
+  .product_info {
+    transition: transform 0.3s ease;
+  }
+
+  .product_view:hover img,
+  .product_view:hover .product_info {
+    transform: scale(1.05);
   }
 
   h2 {

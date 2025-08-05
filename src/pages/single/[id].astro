@@ -21,6 +21,186 @@ export async function getStaticPaths() {
 
 const { id } = Astro.params;
 const { post } = Astro.props;
+
+const allProductsRes = await fetch(
+  "https://qggjjsozgtvkomdpueyz.supabase.co/rest/v1/AC_Products?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFnZ2pqc296Z3R2a29tZHB1ZXl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM3ODY2MDUsImV4cCI6MjA2OTM2MjYwNX0.RsjMI2QZxG6bGmtcxiqUPia_lUJC7ZhaTqofLyeE9Fs",
+  {
+    method: "GET",
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFnZ2pqc296Z3R2a29tZHB1ZXl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM3ODY2MDUsImV4cCI6MjA2OTM2MjYwNX0.RsjMI2QZxG6bGmtcxiqUPia_lUJC7ZhaTqofLyeE9Fs",
+    },
+  }
+);
+const allProducts = await allProductsRes.json();
+const sameSizeProducts = allProducts.filter((product) => product.size === post.size && product.id !== post.id);
+
+import Layout from "../../layouts/Layout.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import NyhedsbrevRoed from "../../components/Nyhedsbrev-roed.astro";
 ---
 
-<h1>{id}: {post.name}</h1>
+<Layout>
+  <!-- <h1>{id}: {post.name}</h1> -->
+
+  <p class="breadcrumb">
+    <a href="/" class="breadcrumb-link">Forside</a> / <a href="/product-view" class="breadcrumb-link">Tøjfællesskabet i København</a> / {post.name}
+  </p>
+
+  <section class="singleview">
+    <div class="single-image">
+      <img src={`/images/${post.image}`} alt={post.name} />
+    </div>
+
+    <div class="product-details">
+      <h1>{post.name}</h1>
+      <p>
+        Mærke:
+        {post.brand}
+      </p>
+      <p>
+        Størrelse:
+        {post.size}
+      </p>
+      <p>
+        Fit:
+        {post.fit}
+      </p>
+      <p>
+        Vask:
+        {post.wash}
+      </p>
+      <p>
+        Stand:
+        {post.condition}
+      </p>
+      <p>
+        Kommentar:
+        {post.comment}
+      </p>
+    </div>
+  </section>
+
+  <section class="flere_items">
+    <h1 class="flere_items-title">Flere items i str. {post.size}</h1>
+    <div class="flere_items-grid">
+      {sameSizeProducts.map((product) => <ProductCard data={product} />)}
+    </div>
+  </section>
+  <NyhedsbrevRoed />
+</Layout>
+
+<style>
+  .breadcrumb {
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    font-style: italic;
+    font-size: 1rem;
+    /* margin-bottom: 2rem; */
+  }
+
+  .breadcrumb-link {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s ease;
+  }
+
+  .breadcrumb a:hover {
+    opacity: 0.7;
+  }
+
+  .singleview {
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    gap: 3rem;
+    margin: 0 auto;
+    padding: 0rem 2rem;
+  }
+
+  .single-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .product-details {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .product-details h1 {
+    font-weight: normal;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  /* Samme ting i din størrelse */
+
+  .flere_items {
+    padding: 3rem 1.5rem;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+  }
+
+  .flere_items-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin: 0 auto;
+    justify-items: center;
+  }
+
+  .flere_items-title {
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  /* Mobil layout */
+
+  @media (max-width: 768px) {
+    .breadcrumb {
+      font-size: 0.95rem;
+      padding: 0rem 2rem;
+    }
+
+    .singleview {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 2rem 1.5rem;
+    }
+
+    .single-image {
+      width: 100%;
+    }
+
+    .single-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .product-details h1 {
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .product-details p {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .flere_items-title {
+      font-size: 2.25rem;
+      padding: 0rem 2rem;
+    }
+
+    .flere_items h3 p {
+      font-size: 1rem;
+    }
+
+    .flere_items-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+</style>

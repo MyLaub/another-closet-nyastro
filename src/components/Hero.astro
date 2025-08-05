@@ -1,6 +1,6 @@
 <section class="hero">
   <div class="hero-image">
-    <img src="/images/Hero-dummy.webp" alt="Kvinde i blåt outfit og sølvsko" />
+    <img src="/images/hero.webp" alt="hero foto" />
   </div>
   <div class="hero-text">
     <h1>Dele-tøj på abonnement</h1>
@@ -11,14 +11,53 @@
 
 <style>
   .hero {
+    width: 100%;
+  }
+
+  .hero-image {
+    position: relative;
+    width: 100%;
+    height: 60%;
+    /* aspect-ratio: 16 / 9; */
+    overflow: hidden;
+  }
+
+  .hero-image img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Tekst ovenpå billedet */
+  .hero-text {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+    max-width: 40%;
+    color: black;
+    padding: 2rem;
+  }
+
+  .hero-text h1 {
+    font-weight: normal;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-text p {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+  }
+  /* .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* min-height: 40vh; */
   }
 
   .hero-image {
     width: 100%;
-    aspect-ratio: 4 / 3; /* Justér forholdet hvis du ønsker lavere højde fx 3 / 2 */
+    aspect-ratio: 4 / 3; 
     overflow: hidden;
   }
 
@@ -33,8 +72,8 @@
     padding: 1rem 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* centrerer vertikalt */
-    align-items: flex-end; /* højrejusterer indholdet horisontalt */
+    justify-content: center; 
+    align-items: flex-end;
     text-align: right;
   }
 
@@ -45,7 +84,7 @@
 
   .hero-text p {
     margin-bottom: 2rem;
-  }
+  } */
 
   .hero-text .cta {
     font-family: "futura-pt", Arial, Helvetica, sans-serif;
@@ -66,20 +105,17 @@
     }
 
     .hero-text {
-      align-items: flex-start;
+      position: static;
+      transform: none;
+      background: none;
       text-align: left;
-      padding: 2rem 2rem;
+      max-width: 100%;
+      padding: 2rem 1.5rem;
     }
 
     .hero-text h1 {
       font-size: 2.25rem;
       text-align: left;
-    }
-
-    .hero-text p {
-    }
-
-    .hero-text .cta {
     }
   }
 </style>
