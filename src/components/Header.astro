@@ -147,10 +147,6 @@
   }
   
 
-
-
-  /* Mobil header style */
-
 .hamburger,
 .mobile-menu {
   display: none;
@@ -194,7 +190,8 @@
   .mobile-menu {
     display: none;
     flex-direction: column;
-    background: white;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
     position: absolute;
     top: 100%;
     right: 0;
@@ -202,7 +199,6 @@
     padding: 1rem 2rem;
     gap: 1rem;
     z-index: 999;
-    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
   }
 
   .mobile-menu a,
@@ -229,13 +225,11 @@
     margin-right:
   }
 
-  /* Submenu styling */
   .submenu {
   display: none;
   flex-direction: column;
   gap: 0.5rem;
   padding-left: 1rem;
-  /* padding-top: 0.5rem; */
 }
 
 .submenu.active {
@@ -245,7 +239,6 @@
 .submenu-toggle {
   cursor: pointer;
   font-weight: 200;
-  /* text-decoration: underline; */
 }
 
 </style>
