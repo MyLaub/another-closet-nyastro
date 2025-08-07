@@ -1,6 +1,5 @@
 ---
 const { data } = Astro.props;
-// const id = new URL(Astro.request.url).searchParams.get("id");
 const id = parseInt(new URL(Astro.request.url).searchParams.get("id") || "");
 ---
 
@@ -50,6 +49,7 @@ const id = parseInt(new URL(Astro.request.url).searchParams.get("id") || "");
     font-family: "the-seasons";
     font-size: 1.5rem;
     padding-bottom: 0.6rem;
+    font-weight: 100;
   }
   h3 {
     font-family: "futura-pt";
