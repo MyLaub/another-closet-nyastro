@@ -44,6 +44,11 @@ html {
   src: url("/fonts/FuturaCyrillicLight.ttf") format ("ttf)");
 }
 
+@font-face {
+  font-family: "futura-pt";
+  src: url("/fonts/FuturaCyrillicBook.ttf") format ("ttf)");
+}
+
 /* @import url("https://use.typekit.net/mwq0ovq.css"); */
 
 h1 {
@@ -57,7 +62,6 @@ h2 {
   font-family: "futura-pt", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-size: 2rem;
-  font-weight: 300;
 }
 
 p {

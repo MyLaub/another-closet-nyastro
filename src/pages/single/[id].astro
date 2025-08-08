@@ -41,8 +41,6 @@ import NyhedsbrevRoed from "../../components/Nyhedsbrev-roed.astro";
 ---
 
 <Layout>
-  <!-- <h1>{id}: {post.name}</h1> -->
-
   <p class="breadcrumb">
     <a href="/" class="breadcrumb-link">Forside</a> / <a href="/product-view" class="breadcrumb-link">Tøjfællesskabet i København</a> / {post.name}
   </p>
@@ -53,7 +51,7 @@ import NyhedsbrevRoed from "../../components/Nyhedsbrev-roed.astro";
     </div>
 
     <div class="product-details">
-      <h1>{post.name}</h1>
+      <!-- <h1>{post.name}</h1>
       <p>
         Mærke:
         {post.brand}
@@ -77,7 +75,27 @@ import NyhedsbrevRoed from "../../components/Nyhedsbrev-roed.astro";
       <p>
         Kommentar:
         {post.comment}
+      </p> -->
+
+      <p>
+        Mærke: <span class="fetched">{post.brand}</span>
       </p>
+      <p>
+        Størrelse: <span class="fetched">{post.size}</span>
+      </p>
+      <p>
+        Fit: <span class="fetched">{post.fit}</span>
+      </p>
+      <p>
+        Vask: <span class="fetched">{post.wash}</span>
+      </p>
+      <p>
+        Stand: <span class="fetched">{post.condition}</span>
+      </p>
+      <p>
+        Kommentar: <span class="fetched">{post.comment}</span>
+      </p>
+
     </div>
   </section>
 
@@ -131,6 +149,14 @@ import NyhedsbrevRoed from "../../components/Nyhedsbrev-roed.astro";
     line-height: 1.6;
     margin-bottom: 1rem;
   }
+
+  .product-details p {
+  font-weight: normal;
+}
+
+.product-details p .fetched {
+  font-weight: 100; 
+}
 
   /* Samme ting i din størrelse */
 
