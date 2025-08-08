@@ -15,14 +15,9 @@ body {
   overflow-x: hidden;
 }
 
-/* main {
-  max-width: 1200px;
-  margin: 0 auto;
-} */
-
 html {
   scroll-behavior: smooth;
-  --pudder: #eecbb8;
+  --pudder: #c0a293;
   --blå: #c1d5df;
   --rød: #862d29;
   --brun: #371b05;
@@ -49,8 +44,6 @@ html {
   src: url("/fonts/FuturaCyrillicBook.ttf") format ("ttf)");
 }
 
-/* @import url("https://use.typekit.net/mwq0ovq.css"); */
-
 h1 {
   font-family: "the-seasons", serif;
   font-style: normal;
@@ -66,15 +59,11 @@ h2 {
 
 p {
   font-family: "futura-pt", Arial, Helvetica, sans-serif;
-  /* font-style: normal; */
   font-size: 1.25rem;
   line-height: 1.6;
-  /* font-weight: light; */
 }
 
-/* Headers */
-
-/* produktvisning css */
+/* Produktvisning css */
 
 .productgrid {
   display: grid;
