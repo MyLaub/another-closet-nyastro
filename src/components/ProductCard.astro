@@ -1,6 +1,5 @@
 ---
 const { data } = Astro.props;
-const id = parseInt(new URL(Astro.request.url).searchParams.get("id") || "");
 ---
 
 <div class="product_card">
@@ -54,7 +53,7 @@ const id = parseInt(new URL(Astro.request.url).searchParams.get("id") || "");
   h3 {
     font-family: "futura-pt";
     font-size: 1.25rem;
-    font-weight: 400;
+    font-weight: 100;
   }
 
   p {
