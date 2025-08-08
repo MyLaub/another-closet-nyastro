@@ -13,8 +13,8 @@ export async function getStaticPaths() {
 
   return data.map((post) => {
     return {
-      params: { id: String(post.id) }
-      // params: { id: post.id },
+      // params: { id: String(post.id) }
+      params: { id: post.id },
       props: { post },
     };
   });
@@ -51,32 +51,7 @@ import NyhedsbrevRoed from "../../components/Nyhedsbrev-roed.astro";
     </div>
 
     <div class="product-details">
-      <!-- <h1>{post.name}</h1>
-      <p>
-        Mærke:
-        {post.brand}
-      </p>
-      <p>
-        Størrelse:
-        {post.size}
-      </p>
-      <p>
-        Fit:
-        {post.fit}
-      </p>
-      <p>
-        Vask:
-        {post.wash}
-      </p>
-      <p>
-        Stand:
-        {post.condition}
-      </p>
-      <p>
-        Kommentar:
-        {post.comment}
-      </p> -->
-
+      <h1>{post.name}</h1>
       <p>
         Mærke: <span class="fetched">{post.brand}</span>
       </p>
@@ -95,7 +70,6 @@ import NyhedsbrevRoed from "../../components/Nyhedsbrev-roed.astro";
       <p>
         Kommentar: <span class="fetched">{post.comment}</span>
       </p>
-
     </div>
   </section>
 
@@ -113,7 +87,8 @@ import NyhedsbrevRoed from "../../components/Nyhedsbrev-roed.astro";
     margin: 0 auto;
     padding: 2rem 2rem;
     font-style: italic;
-    font-size: 1rem;
+    font-size: 1.25rem;
+    font-weight: 100;
   }
 
   .breadcrumb-link {
@@ -151,12 +126,12 @@ import NyhedsbrevRoed from "../../components/Nyhedsbrev-roed.astro";
   }
 
   .product-details p {
-  font-weight: normal;
-}
+    font-weight: normal;
+  }
 
-.product-details p .fetched {
-  font-weight: 100; 
-}
+  .product-details p .fetched {
+    font-weight: 100;
+  }
 
   /* Samme ting i din størrelse */
 
